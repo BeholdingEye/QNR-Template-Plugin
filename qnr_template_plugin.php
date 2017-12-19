@@ -12,7 +12,8 @@ License: GPL2
 
 // -----------------------  Error Handler for debugging
 
-error_reporting(E_ALL); // Report all PHP errors
+//error_reporting(E_ALL); // Report all PHP errors
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING | E_DEPRECATED));
 ini_set('display_errors', 1); // Change default PHP config
 
 function qnr_template_plugin_exception_error_handler($severity, $message, $file, $line) {
